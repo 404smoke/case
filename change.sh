@@ -1,7 +1,6 @@
 #!/bin/sh
 git pull
-TTT=`cat ./text`
-echo $TTT
+read TTT < ./text
 sed -i 's/yyy=.*/yyy=$TTT/' timer.py
 docker build -t timer .
 docker restart timer
