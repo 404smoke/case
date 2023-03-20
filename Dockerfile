@@ -4,5 +4,5 @@ ENV ADMIN="smoke"
 RUN apt-get update && apt-get install python3-pip -y && pip install --upgrade pip && pip install pipenv
 WORKDIR /usr/src/app/
 COPY . /usr/src/app/
-VOLUME www_data:/var/www
+VOLUME www_data:/var/www/timer_html
 CMD ["python", "timer.py"]
