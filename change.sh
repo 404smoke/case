@@ -2,5 +2,7 @@
 git pull
 read TTT < ./text
 sed -i "s/yyy=.*/yyy=\'$TTT\'/g" timer.py
+docker stop timer
+docker container rm timer
 docker build -t timer .
-docker restart timer
+docker run -d -v www_data:/var/www/timer_html timer
